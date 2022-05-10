@@ -6,21 +6,13 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-console.log(ingredients)
-const itemContainerEl = document.querySelector(`.ingredients`);
 
-const makeIngredientsCard = (ingredients)=> {
-  const ingredientsEl = document.createElement(`li`);
-  ingredientsEl.textContent = ingredients;
-  ingredientsEl.classList.add(`item`);
+const refs = document.querySelector("#ingredients");
+  console.log(refs)
 
-  return ingredientsEl;
-  
-};
-console.log(makeIngredientsCard(ingredients[1]))
-
-
-const items = ingredients.map(makeIngredientsCard);
-
-console.log(items);
-itemContainerEl.prepend(items);
+const createListItem = (text) => {
+  const li = document.createElement("li");
+  li.textContent = text;
+  refs.append(li);
+}
+ingredients.map((ingredient) => createListItem(ingredient));
