@@ -1,41 +1,36 @@
+
 const category = categories.children;
 console.log(`Number of categories:`, category.length);
 
+const refs = {
+    menuItems: [...document.querySelectorAll(".item")],
+}
 
+const takeItemfirstElement = refs.menuItems.map((name) => name.firstElementChild);
+const takeNameItem = takeItemfirstElement.map((nameItem) => nameItem.textContent);
 
-
-
-const categoryTitle = categories.querySelectorAll(`h2`);
-console.log(categoryTitle);
-const elements = categories.querySelectorAll(`ul`);
-
-    
-    
-
-
+const takeItemlastElementChild = refs.menuItems.map((ul) => ul.lastElementChild);
+const takeLengthItem = takeItemlastElementChild.map((ulItem) => ulItem.childElementCount)
 
 const getCategoriesNames = (names) => {
     
     let message;
-    if (categoryTitle.includes(names)) {
+    if (takeNameItem.includes(names)) {
         return message = `Category: ${names}`;
     } return message = `${names} - такої категорії не існує`
+    
 };
 
-const getSumOfElements = 
 
 
 
-console.log(getCategoriesNames('Animals'));
-console.log(getCategoriesNames('Products'));
-console.log(getCategoriesNames('Technologies'));
-console.log(getCategoriesNames('wqreqr'));
+console.log(getCategoriesNames("Animals"));
+console.log(getCategoriesNames("Products"));
+console.log(getCategoriesNames("Technologies"));
+console.log(getCategoriesNames("Animals231312"));
 
 
-// // 1. Приймає елемент категорії;
-// // 2. Перевіряє чи є така категорія.
-// // 3. Рахує кількість елементів в цій категорії
-// // 4. Повертає імя категорії та кількість елементів.
-
+console.log(takeNameItem)
+console.log(takeLengthItem)
 
 
