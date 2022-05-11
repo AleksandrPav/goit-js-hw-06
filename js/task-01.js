@@ -2,35 +2,22 @@
 const category = categories.children;
 console.log(`Number of categories:`, category.length);
 
-const refs = {
-    menuItems: [...document.querySelectorAll(".item")],
-}
+const menuItems = [...document.querySelectorAll(".item")];
 
-const takeItemfirstElement = refs.menuItems.map((name) => name.firstElementChild);
-const takeNameItem = takeItemfirstElement.map((nameItem) => nameItem.textContent);
-
-const takeItemlastElementChild = refs.menuItems.map((ul) => ul.lastElementChild);
-const takeLengthItem = takeItemlastElementChild.map((ulItem) => ulItem.childElementCount)
-
-const getCategoriesNames = (names) => {
-    
-    let message;
-    if (takeNameItem.includes(names)) {
-        return message = `Category: ${names}`;
-    } return message = `${names} - такої категорії не існує`
-    
-};
+const getItems = menuItems.forEach((element) => console.log(
+    `    Category: ${element.children[0].textContent} 
+    Elements: ${element.children[1].children.length}`));
 
 
 
 
-console.log(getCategoriesNames("Animals"));
-console.log(getCategoriesNames("Products"));
-console.log(getCategoriesNames("Technologies"));
-console.log(getCategoriesNames("Animals231312"));
+// Number of categories: 3
 
+// Category: Animals
+// Elements: 4
 
-console.log(takeNameItem)
-console.log(takeLengthItem)
+// Category: Products
+// Elements: 3
 
-
+// Category: Technologies
+// Elements: 5
