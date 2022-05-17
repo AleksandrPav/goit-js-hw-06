@@ -7,15 +7,20 @@ const ingredients = [
   'Condiments',
 ];
 
+
 const refs = document.querySelector("#ingredients");
+
 console.log(refs)
   
-const createListItem = ingredients.forEach(ingredient => {
-  let items = document.createElement("li");
+const createListItem = ingredients.map(ingredient => {
+  const items = document.createElement("li");
   items.classList.add("item");
-  items.innerHTML = ingredient;
-  refs.append(items)
+  items.textContent = ingredient;
+  return items;
 });
+refs.append(...createListItem);
+console.log(createListItem);
+
 
 
 
